@@ -4,6 +4,8 @@
 
 ![imagen de la tabla](datos.jpeg)
 
-## foto de la tabla
+La solucón fué **{59, 60, 52, 44, 35, 26, 17, 7, 6, 5}**
+
+## foto de las listas
 
 ![imagen de la tabla](tabla.jpeg)
