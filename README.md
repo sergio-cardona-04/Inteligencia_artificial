@@ -1,6 +1,6 @@
-# Ejercicios: Monjes y cavernicolas, Laverintos y conteo de islas
+# Ejercicios: Monjes y cavernicolas, Laberintos y conteo de islas
 
-## Monjes y laberintos
+## Monjes y canivales
 
 Tres monjes y tres cavernicolas se encuentran en una isla, el proposito de esto es cruzar a todas las personas
 hhacia la isla siguiente por medio de un bote, las reglas son las siguientes:
@@ -92,7 +92,7 @@ para realizar el regreso, sea monje o sea cavernicola
 
 ***
 
-## Laverinto
+## Laberinto
 
 En una matriz de n x m se crea un laverinto, el punto de inicio y el final
 son aleatorios, lo que se busca es crear el algoritmo necesario para poder llegar a la meta:
@@ -166,7 +166,7 @@ function encontrarFinal(coordActX, coordActY) {
     if (coordActX < la - 1) {
       if (encontrarFinal(coordActX + 1, coordActY)) return true;
     }
-    
+
     if (coordActX > 0) {
       if (encontrarFinal(coordActX - 1, coordActY)) return true;
     }
