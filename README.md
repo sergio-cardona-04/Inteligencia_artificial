@@ -166,6 +166,7 @@ function encontrarFinal(coordActX, coordActY) {
     if (coordActX < la - 1) {
       if (encontrarFinal(coordActX + 1, coordActY)) return true;
     }
+    
     if (coordActX > 0) {
       if (encontrarFinal(coordActX - 1, coordActY)) return true;
     }
