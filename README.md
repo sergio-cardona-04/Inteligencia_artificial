@@ -37,11 +37,12 @@ El siguiente ejercicio busca acomodar a 4 reinas (piezas del ajedrez) en una mat
 
 ### Premisas
 
+* Tenemos n cantidad de personas 
 * Todos se encuentran en un círculo
 * La pocisión de inicio del cuchillo en la primera vueta es aleatoria
 * La persona que tenga el cuchillo apuñalará a la persona que tenga enfrente, el cuchillo pasará a la siguiente persona viva
-* el ciclo y las rondas se repite hasta que solo queden dos jugadores, uno deberá eliminar al otro y el juego terminará.
-* descubrir el lugar para sobrevivir 
+* El ciclo y las rondas se repite hasta que solo queden dos jugadores, uno deberá eliminar al otro y el juego terminará.
+* Descubrir el lugar para sobrevivir
 
 ***
 
@@ -238,8 +239,77 @@ let exito = encontrarFinal(0, 0);
 
 ## Conteo de islas
 
-En una matriz de n x m se generan diferentes bloques de campos de la matriz
-juntos, lo cual da el efecto de isla, lograr crear un algoritmo que sea
-capaz de contar la cantidad de islas de la manera más eficiente posible
+En una matriz de n x m se generan diferentes bloques de campos de la matriz juntos, lo cual da el efecto de isla, lograr crear un algoritmo que sea capaz de contar la cantidad de islas de la manera más eficiente posible
 
-### Solución
+### Premisas
+
+* Cada bloque dentro de la matríz estará compuesto por varias o una celda las cuales tendrán un uno como indicador adentro.
+* La parte no contable tendrá ceros o en su defecto, celdas vacías.
+* Las celdas deben estar compartiendo una arista para considerarse de un mismo conjunto
+
+### Idea general
+
+Recorrer el arreglo de izquierda a derecha empezando por arriba y bajando, cuando nos encontremos con un alguna isla empezaremos con la busqueda completa de la isla, e intercambiando los 1's por algun otro identificador para no volver a pasar por ellos, tendremos un contador que nos permitirá llevar la suma de las islas encontradas, una vez que lleguemos a la ultima celda, habremos terminado.
+
+### Solución detallada
+
+* Iniciaremos declarando una variable, su utilidad será contar la cantidad de islas que nos encontremos.
+* Como primer paso, tendremos dos ciclos anidados para permitirnos recorrer todo el arreglo.
+* Empezaremos desde la casilla 0,0 avanzando hacia la derecha y, una vez que terminemos con la "fila" completa, comenzaremos con la siguiente desde su posición 0.
+* Dentro de los dos ciclos habrá un condicional para verificar si a la celda actual le corresponde un uno, de ser así, empezaremos con la busqueda completa de la isla, si contiene un 0 o una 'v' simplemente seguiremos nuestro camino, para el conteo de las celdas nos ayudaremos de la recursividad:
+  * vamos a colocarnos en nuestro primer punto, cambiaremos el uno por una 'v', intentaremos avanzar en las 4 direcciones (siempre respetando los límites del arreglo, evitando caer en celdas de índice -1 o con un número mayor al largo o ancho -1) si seguimos encontrando numeros 1's, los cambiaremos por las v's, al final de la función dejaremos un return para poder salir de la recursividad. 
+* Al tener la isla cubierta, podemos continuar con nuestro recorrido, no sin antes actualiza nuestro contador, seguiremos el proceso hasta que no quede más arreglo por recorrer, mostrado después la cantidad guardada por el contador.
+
+### Código de ejemplo
+
+```
+function contarIslas(matriz) {
+  if (!matriz || matriz.length === 0) return 0;
+  const filas = matriz.length;
+  const columnas = matriz[0].length;
+  let contadorIslas = 0;
+
+  const marcarIsla = (i, j) => {
+    if (i < 0 || i >= filas || j < 0 || j >= columnas) {
+      return; 
+    }
+    if (matriz[i][j] !== 1) {
+      return;
+    }
+
+    matriz[i][j] = 'v';
+
+    marcarIsla(i + 1, j); 
+    marcarIsla(i - 1, j); 
+    marcarIsla(i, j + 1); 
+    marcarIsla(i, j - 1); 
+  };
+
+  for (let i = 0; i < filas; i++) {
+    for (let j = 0; j < columnas; j++) {
+      
+      if (matriz[i][j] === 1) {descubierta.
+        contadorIslas++;
+
+        marcarIsla(i, j);
+      }
+    }
+  }
+
+  return contadorIslas;
+}
+
+
+const mapa = [
+  [1, 1, 0, 0, 0], 
+  [1, 1, 0, 0, 1], 
+  [0, 0, 0, 1, 1], 
+  [0, 0, 0, 0, 0], 
+  [1, 0, 1, 0, 1]  
+];
+
+const total = contarIslas(mapa);
+
+// Usamos comas para separar el texto de la variable
+console.log("Islas encontradas:", total);
+```
