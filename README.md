@@ -1,4 +1,49 @@
-# Ejercicios: Monjes y cavernicolas, Laberintos y conteo de islas
+# Ejercicios introducción a la Inteligencia Artifial
+
+## Reinas
+
+El siguiente ejercicio busca acomodar a 4 reinas (piezas del ajedrez) en una matriz de 4 x 4 sin que se ataquen, la forma de acomodarlos sin que se ataquen sería la siguiente:
+
+<table>
+<tr>
+  <th></th>
+  <th></th>
+  <th>r</th>
+  <th></th>
+</tr>
+<tr>
+  <th>r</th>
+  <th></th>
+  <th></th>
+  <th></th>
+</tr>
+<tr>
+  <th></th>
+  <th></th>
+  <th></th>
+  <th>r</th>
+</tr>
+<tr>
+  <th></th>
+  <th>r</th>
+  <th></th>
+  <th></th>
+</tr>
+</table>
+
+***
+
+## Problema de Josephus: posición segura 
+
+### Premisas
+
+* Todos se encuentran en un círculo
+* La pocisión de inicio del cuchillo en la primera vueta es aleatoria
+* La persona que tenga el cuchillo apuñalará a la persona que tenga enfrente, el cuchillo pasará a la siguiente persona viva
+* el ciclo y las rondas se repite hasta que solo queden dos jugadores, uno deberá eliminar al otro y el juego terminará.
+* descubrir el lugar para sobrevivir 
+
+***
 
 ## Monjes y canivales
 
@@ -94,7 +139,7 @@ para realizar el regreso, sea monje o sea cavernicola
 
 ## Laberinto
 
-En una matriz de n x m se crea un laverinto, el punto de inicio y el final
+En una matriz de n x m se crea un laberinto, el punto de inicio y el final
 son aleatorios, lo que se busca es crear el algoritmo necesario para poder llegar a la meta:
 
 ### Datos conocidos / premisas 
@@ -114,7 +159,7 @@ son aleatorios, lo que se busca es crear el algoritmo necesario para poder llega
 * 'var coordActX': guardamos la coordenada actual en X, también funcionará como coordenada inicial
 * `var coordActY`:guardamos la coordenada actual en y, también funcionará como coordenada inicial
 
-### Opción 1: encontrar la salida
+### Encontrar la salida
 
 crearemos una función recursiva la cual intentará avanzar en las 4 direcciones hasta encontrar la salida dentro del laberinto, los parámetros serán:
 
@@ -124,7 +169,7 @@ function encontrarFinal(cordActY, coordActX)
 
 Primero, llenaremos las variables de las dimensiones del arreglo, para esto, consideraremos como 0 el valor mínimo en ambas direcciones, para la variable `la` guardaremos el largo total de un vector dentro del arreglo, para `aa` guardaremos la cantidad de vectores dentro del arreglo.
 
-![Poner la captura de la tablet](https://ejemplo.com/foto.jpg)
+![Poner la captura de la tablet](matrices.jpeg)
 
 para la función haremos lo siguiente:
 
@@ -188,7 +233,7 @@ let exito = encontrarFinal(0, 0);
 
 ```
 
-### Opcion 2: encontrar la salida guardando el camino correcto
+
 ***
 
 ## Conteo de islas
