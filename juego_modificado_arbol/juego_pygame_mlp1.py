@@ -64,6 +64,8 @@ class Juego:
         self.corriendo = True
         self.modo_auto = False
 
+        # DATOS PARA MACHINE LEARNING
+
         # Datos / modelo
         self.datos_modelo: List[Sample] = []
         self.modelo: Optional[MLPClassifier] = None
@@ -76,6 +78,7 @@ class Juego:
         self.ultima_proba_salto: Optional[float] = None
 
         # Parámetros de decisión
+        #Registra cada cuantos frames registra decisiones
         self.decision_window = 500
         self.decision_record_every = 3
         self._decision_frame_counter = 0
@@ -91,6 +94,7 @@ class Juego:
         # Velocidad de desplazamiento del fondo
         self.fondo_speed = 3
 
+        #variables de salto
         self.salto = False
         self.en_suelo = True
         self.salto_vel_inicial = 15.0
