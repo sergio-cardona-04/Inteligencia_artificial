@@ -67,7 +67,11 @@ El sistema dispone de información como:
 * Tipo de establecimiento.
 * Número de compras realizadas durante el día.
 * Historial de compras del cliente.
-* Analice las ventajas y desventajas de utilizar un árbol de decisión y una red neuronal multicapa.
+
+**Analice las ventajas y desventajas de utilizar un árbol de decisión y una red neuronal multicapa.**
+
+* Red neuronal: 
+* Árbol de desición: 
 
 **¿Cuál utilizaría y por qué?**
 
