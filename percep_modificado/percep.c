@@ -5,31 +5,20 @@
 #define epoca 3000000
 #define K 0.03f
 
-//0.00000
-//Funcion de Entrenamiento Perceptron
 float EntNt(float, float, float  );
-//Funcion para las salidas 
 float InitNt(float, float);
-//Sigmoide
 float sigmoide(float);
-//pesos aleatorios
 void pesos_initNt();
 
 float Pesos[2];	
 float bias=0.5f;
 float Error;
- //                 1          1          1
- //                 0          1         0           
- //                 1          0         0
- //                0          0          0
 float EntNt( float x0, float x1, float target )
 {
   
-//printf("x0=%f, x1=%f, t %f \n" ,x0, x1,  target );
-  
   float net = 0;
   float out = 0;
-  float delta[2];  //Es la variacion de los pesos sinapticos
+  float delta[2];  
   //float Error;
    
   net = Pesos[0]*x0 + Pesos[1]*x1 - bias;
