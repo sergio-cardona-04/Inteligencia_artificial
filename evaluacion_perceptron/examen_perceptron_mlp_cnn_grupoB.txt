@@ -1,0 +1,230 @@
+           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            EXAMEN TEÓRICO — PERCEPTRÓN, MLP Y CNN (GRUPO B)
+
+                            Eduardo Alcaraz
+           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+1 Datos del alumno
+══════════════════
+
+  ━━━━━━━━━━━
+   Nombre  Sergio Cardona García
+   Grupo   B 
+   Fecha   03/11/2026 
+  ━━━━━━━━━━━
+
+
+2 Pregunta 1 — Por qué no basta “una sola neurona”
+══════════════════════════════════════════════════
+
+  1. Resume el funcionamiento de un perceptrón como “regla de decisión”.
+  2. Explica la noción de *frontera lineal* sin escribir fórmulas.
+  3. Da un ejemplo (aunque sea inventado) donde esa frontera *no*
+     alcanza.
+
+
+2.0.1 Respuesta
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+1. Es un modelo de red neuronal que se basa en usar pesos y sesgos,
+además, necesita una función de activavión.
+2. Es una separación la cual divide los datos en diferentes grupos, se
+puede representar graficamente con una línea
+3. Los resultados de la compuerta XOR, no son linealmente divisibles.
+
+
+3 Pregunta 2 — CNN: de píxeles a mapas
+══════════════════════════════════════
+
+  1. ¿Qué problema de *estructura espacial* ignora un MLP si aplana la
+     foto?
+  2. ¿Qué significa que un mismo filtro se aplique en toda la imagen?
+  3. Además de clasificación de objetos, cita *dos* usos donde la CNN
+     encaja bien.
+
+
+3.0.1 Respuesta
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+1. El hecho de crear una matriz de pixeles en un vector de una sola
+dimensión, hace que se pierda un factor de relación entre pixeles vecinos
+2. Que se toma la matriz de la imagen y en base a eso se le aplica un
+filtro de convolución con un kernel.
+3. Segmentación de imágenes y patrones en imagenes
+
+4 Pregunta 3 — Softmax, clases y decisiones
+═══════════════════════════════════════════
+
+  1. Diferencia un problema *binario* de uno *multiclase* en términos de
+     salida de la red.
+  2. ¿Qué lectura le das a las probabilidades que produce un softmax?
+  3. Imagina tres carpetas de imágenes (tres riesgos o tres animales):
+     ¿qué arquitectura de *salida* usarías y por qué?
+
+
+4.0.1 Respuesta
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+1. Problema binario: Solo existen dos clases posibles, por lo que solo 
+se utiliza una neurona de salida con una función de activación simple.
+Problema multiclase: se utiliza una neurona de salida por cada clase.
+2. transforma los valores de salida de la red en una distribución de
+probabiidades, la suma debe dar 100%
+3. una capa de salida con tres neuronas,  y una funcióno softmax, así
+permitiría una probabilidad para cada clase
+
+
+5 Pregunta 4 — MLP: profundidad con sentido
+═══════════════════════════════════════════
+
+  1. ¿Qué ganas al apilar capas densas con activaciones no lineales?
+  2. ¿Qué riesgo aparece si la red es *demasiado* grande para tus datos?
+  3. Relaciona “capa oculta” con la idea de aprender representaciones
+     intermedias (en palabras simples).
+
+
+5.0.1 Respuesta
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+1. El MLP puede aprender relaciones más complejas entre los datos de 
+entrada
+2. El riesgo de sobreajuste
+3. Las capas ocultas procesan la información que reciben de las capas anteriores y 
+generan nuevas representaciones de los dato
+
+6 Pregunta 5 — Entrenamiento sin magia
+══════════════════════════════════════
+
+  1. Explica qué es una *época* a nivel intuitivo.
+  2. ¿Hacia qué “objetivo” se mueven los pesos cuando hablamos de
+     minimizar el error?
+  3. Si el learning rate es absurdo (muy grande o muy chico), ¿qué
+     síntomas conceptuales esperarías?
+
+
+6.0.1 Respuesta
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+1. Es cuando el modelo pasa por todo el entrenamiento una vez
+2. Se ajustan buscando reducir el valor de la función de 
+pérdida
+3. Los pesos pueden ser numeros muy grandes, provocando un mayor error
+
+
+7 Pregunta 6 — Bloques de una CNN
+═════════════════════════════════
+
+  Sin matemáticas, di el papel de cada pieza:
+  1. Kernel / filtro convolucional
+  2. Función de activación después de conv
+  3. Max pooling
+  4. Capa densa + softmax al final de un clasificador
+
+
+7.0.1 Respuesta
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+1. Es la matriz que recorre la imagen para identificar características 
+y realizar cambios
+2. Permite que la red aprenda patrones mas complejos
+3. Es una operación que reduce las dimensiones espaciales de los 
+mapas de característica
+4. combina las características que fueron extraídas por las 
+capas convolucionales para generar una predicción
+
+
+8 Pregunta 7 — XOR y la historia del aprendizaje
+════════════════════════════════════════════════
+
+  1. ¿Por qué XOR se volvió un “contraejemplo” famoso?
+  2. ¿Qué elemento de un MLP permite patrones que no son una sola línea?
+  3. ¿En qué tipo de tabla/problema del mundo real seguirías usando algo
+     tan simple como un perceptrón o un modelo lineal?
+
+
+8.0.1 Respuesta
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+1. Porque mostró que un perceptrón simple no basta para hacer aprender
+a un modelo
+2. Las capas ocultas
+3. Problemas de clasificación binaria.
+
+
+9 Pregunta 8 — De lo simple a lo abstracto en visión
+════════════════════════════════════════════════════
+
+  1. Contrasta lo que buscan capas tempranas vs capas profundas en una
+     CNN.
+  2. ¿Qué intuición da eso para *transfer learning* (aunque no lo hayas
+     programado)?
+  3. ¿Cuándo sospecharías que tu CNN es “profunda de más” para el
+     dataset del curso?
+
+
+9.0.1 Respuesta
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+1. Las primeras capas de una CNN se enfocan en identificar características 
+sencillas de una imagen, como bordes, líneas, colores y texturas. Conforme 
+la información pasa por capas más profundas, estas combinan las 
+características anteriores para identificar patrones más complejos, 
+como formas, partes de objetos e incluso estructuras completas.
+2. El transfer learning consiste en aprovechar los conocimientos que 
+un modelo adquirió durante un entrenamiento anterior para utilizarlos 
+en una nueva tarea.
+3. Cuando el modelo tiene demasiadas capas en comparación con la cantidad y 
+complejidad de los datos disponibles.
+
+10 Pregunta 9 — Análisis: matching problema → modelo
+════════════════════════════════════════════════════
+
+  Elige *Perceptrón/lineal* / *MLP* / *CNN* (una opción) y justifica en
+  una frase:
+
+  1. Predecir “compra / no compra” con edad, ingreso y visitas a la web
+     (columnas numéricas).
+  2. Detectar si hay un gato en una foto.
+  3. Aproximar una frontera “curva” o a trozos en datos 2D tabulares.
+  4. ¿CNN es la herramienta natural para predecir la siguiente palabra
+     de un párrafo? Justifica y nombra una familia del curso más
+     adecuada (RNN/Transformer a nivel nombre).
+
+
+10.0.1 Respuesta
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+1. CNN
+2. CNN
+3. MLP
+4. No
+
+
+11 Pregunta 10 — Análisis: auditoría de un equipo
+═════════════════════════════════════════════════
+
+  Un equipo entrega un modelo “muy preciso” en su laptop y falla con
+  datos nuevos.
+
+  1. ¿Qué diagnósticos conceptuales harías *antes* de tocar
+     hiperparámetros al azar?
+  2. Pide *dos* evidencias que deberían mostrar en la defensa (curvas,
+     separación train/val, ejemplos de error, etc.).
+  3. Redacta *tres* preguntas tuyas para comprobar si saben cuándo usar
+     perceptrón, MLP o CNN (distintas a las del Grupo A si las conoces).
+
+
+11.0.1 Respuesta
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+1. Primero revisar la estructura del dataset, revisar que todo siga la 
+estructura que se estableció, luego, si vemos que todo es igual, entonces
+empezaría a ver cosas como si existe sobreajuste a la hora de entrenar, cosas
+como el rendimiento o los resultados
+2. Matriz de convolución y resultados aprendidos
+3.  1. Si tenemos un conjunto pequeño de datos numéricos y observamos que las categorías pueden separarse fácilmente, ¿qué ventajas tendría utilizar un perceptrón en lugar de un MLP con varias capas ocultas?
+
+2. Si trabajamos con datos tabulares donde existen relaciones complejas entre las variables, ¿por qué podría ser más conveniente utilizar un MLP en lugar de un modelo lineal?
+
+3. Si necesitamos identificar defectos en fotografías de productos y estos pueden aparecer en diferentes posiciones de la imagen, ¿qué características de una CNN la hacen más adecuada que un MLP tradicional?
