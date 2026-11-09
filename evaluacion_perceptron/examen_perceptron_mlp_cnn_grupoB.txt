@@ -223,8 +223,7 @@ estructura que se estableció, luego, si vemos que todo es igual, entonces
 empezaría a ver cosas como si existe sobreajuste a la hora de entrenar, cosas
 como el rendimiento o los resultados
 2. Matriz de convolución y resultados aprendidos
-3.  1. Si tenemos un conjunto pequeño de datos numéricos y observamos que las categorías pueden separarse fácilmente, ¿qué ventajas tendría utilizar un perceptrón en lugar de un MLP con varias capas ocultas?
-
-2. Si trabajamos con datos tabulares donde existen relaciones complejas entre las variables, ¿por qué podría ser más conveniente utilizar un MLP en lugar de un modelo lineal?
-
-3. Si necesitamos identificar defectos en fotografías de productos y estos pueden aparecer en diferentes posiciones de la imagen, ¿qué características de una CNN la hacen más adecuada que un MLP tradicional?
+3.
+   1. Si tenemos un conjunto pequeño de datos numéricos y observamos que las categorías pueden separarse fácilmente, ¿qué ventajas tendría utilizar un perceptrón en lugar de un MLP con varias capas ocultas?
+   Si trabajamos con datos tabulares donde existen relaciones complejas entre las variables, ¿por qué podría ser más conveniente utilizar un MLP en lugar de un modelo lineal?
+   Si necesitamos identificar defectos en fotografías de productos y estos pueden aparecer en diferentes posiciones de la imagen, ¿qué características de una CNN la hacen más adecuada que un MLP tradicional?
