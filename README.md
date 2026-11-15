@@ -9,7 +9,6 @@
 
 ## Proyectos
 
-Por el momento no hay proyectos.
 
 ## Evaluaciones
 
