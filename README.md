@@ -1,22 +1,23 @@
 <div align="center">
-
   <h1>Sergio Cardona - Inteligencia Artificial</h1>
   <p>Actividades de la materia</p>
-
 </div>
 
----
+<div align="center">
+    <h2>Proyectos</h2>
+</div>
 
-## Proyectos
-
-
-## Evaluaciones
+<div align="center">
+    <h2>Evaluaciones</h2>
+</div>
 
 - [Evaluación A*](evaluacion_a_aterisco/)
 - [Evaluación de redes convolucionales](evaluacion_convolucionales/eval.txt)
 - [Evaluación de perceptrón, MLP y CNN](evaluacion_perceptron/examen_perceptron_mlp_cnn_grupoB.txt)
 
-## Prácticas
+<div align="center">
+    <h2>Prácticas</h2>
+</div>
 
 - [Diferencias entre árboles de decisión y redes neuronales](arbol_red_diferencias/README.md)
 - [CNN: clasificación de imágenes deportivas](cnn_sportimg/README.md)
